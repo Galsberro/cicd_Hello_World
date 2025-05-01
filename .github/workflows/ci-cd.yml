@@ -1,21 +1,20 @@
 name: Print File Content CI/CD
 
-on: 
-    push:
-        branches:
-            - main
-    pull_request:
-        types: [opened]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened]
 
 jobs:
-    build_test:
-        name: Print File Content CI/CD v1
-        runs-on: ubuntu-latest
+  build_test:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-            uses: actions/checkout@v4
-            
-            - name: Print Hello World
-            run: cat hello_world.txt
-            
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print Hello World
+        run: |
+          cat hello_world.txt
