@@ -1,0 +1,19 @@
+name: Print File Content CI/CD
+
+on: 
+    push:
+        branches:
+            - main
+    pull_request:
+        types: opened
+
+jobs:
+    build_test:
+        name: Print File Content CI/CD v1
+        runs_on: ubuntu-latest
+
+        steps:
+            - name: Print
+            run: cat hello_world.txt
+
+            
