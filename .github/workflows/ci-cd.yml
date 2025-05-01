@@ -5,15 +5,17 @@ on:
         branches:
             - main
     pull_request:
-        types: opened
+        types: [opened]
 
 jobs:
     build_test:
         name: Print File Content CI/CD v1
-        runs_on: ubuntu-latest
+        runs-on: ubuntu-latest
 
         steps:
-            - name: Print
+            - name: Checkout code
+            uses: actions/checkout@v4
+            
+            - name: Print Hello World
             run: cat hello_world.txt
-
             
